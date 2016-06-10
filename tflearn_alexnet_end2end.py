@@ -28,16 +28,6 @@ def pil_to_nparray(pil_image):
     return np.asarray(pil_image, dtype="float32")
 
 
-def to_categorical(y, nb_classes):
-    y = np.asarray(y, dtype='int32')
-    if not nb_classes:
-        nb_classes = np.max(y)+1
-    Y = np.zeros((len(y), nb_classes))
-    for i in range(len(y)):
-        Y[i, y[i]] = 1.
-    return Y
-
-
 def load_data(datafile, num_clss, save=False, save_path='dataset.pkl'):
     train_list = open(datafile,'r')
     labels = []
