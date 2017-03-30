@@ -94,7 +94,7 @@ def predict(network, modelfile,images):
     return model.predict(images)
 
 if __name__ == '__main__':
-    load_data('train.txt', 17)
+    X, Y = load_data('train.txt', 17)
     # X, Y = load_from_pkl('dataset.pkl')
     net = create_alexnet(17)
     train(net,X,Y)
